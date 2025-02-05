@@ -33,4 +33,4 @@ jobs:
           echo "Token is: $NODE_AUTH_TOKEN"  # This should not be empty (avoid logging in production)
           npm publish
     env:
-      NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}

@@ -25,10 +25,12 @@ jobs:
      - uses: actions/setup-node@v4
        with:
           node-version: 20
-     - run: |
-          echo "GH_REPO: $NODE_AUTH_TOKEN"
+          registry-url: 'https://npm.pkg.github.com/'
+
      - run: npm install
      - run: npm run build
-     - run: npm publish
-       env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_NPM_PUBLISH_TOKEN }}
+     - run: |
+          echo "Token is: $GITHUB_NPM_PUBLISH_TOKEN"  # This should not be empty (avoid logging in production)
+          npm publish
+    env:
+      NODE_AUTH_TOKEN: ${{ secrets.GITHUB_NPM_PUBLISH_TOKEN }}

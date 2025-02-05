@@ -1,6 +1,5 @@
 {
-  "name": "sample-vite-library-mode",
-  "private": true,
+  "name": "@ibr4qr/sample-vite-library-mode",
   "version": "0.0.0",
   "type": "module",
   "files": [
